@@ -9,37 +9,51 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
+      background: #e8f5e9; /* verde muy claro */
+      color: #1b5e20; /* verde oscuro */
     }
     header {
-      background: #111;
+      background: #1b5e20; /* verde oscuro */
       color: white;
       text-align: center;
       padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav {
       display: flex;
       justify-content: center;
-      background: #333;
-      flex-wrap: wrap;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 70px; /* justo debajo del header */
+      z-index: 999;
     }
     nav a {
-      color: white;
-      padding: 14px 20px;
+      color: #1b5e20;
+      padding: 15px 25px;
       text-decoration: none;
       display: block;
+      font-weight: bold;
+      border-bottom: 3px solid transparent;
+      transition: border-bottom 0.3s ease;
     }
-    nav a:hover {
-      background-color: #575757;
+    nav a:hover, nav a:focus {
+      border-bottom: 3px solid #4caf50; /* verde más claro */
     }
     section {
-      padding: 40px;
-      border-bottom: 1px solid #ccc;
+      padding: 40px 20px;
+      border-bottom: 1px solid #a5d6a7; /* verde suave */
       background: white;
+      max-width: 1000px;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(27,94,32,0.1);
     }
     h2 {
       text-align: center;
-      color: #222;
+      color: #1b5e20;
     }
     .productos {
       display: flex;
@@ -49,18 +63,40 @@
       margin-top: 20px;
     }
     .producto {
-      background: #eee;
+      background: #c8e6c9; /* verde claro */
       border-radius: 10px;
       padding: 20px;
       width: 200px;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 6px rgba(27,94,32,0.2);
+      color: #1b5e20;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .producto:hover {
+      background-color: #a5d6a7; /* verde más intenso */
+      cursor: pointer;
     }
     footer {
-      background: #111;
+      background: #1b5e20;
       color: white;
       text-align: center;
       padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* Responsive para móviles */
+    @media (max-width: 600px) {
+      nav {
+        flex-wrap: wrap;
+      }
+      .productos {
+        flex-direction: column;
+        align-items: center;
+      }
+      .producto {
+        width: 90%;
+      }
     }
   </style>
 </head>
